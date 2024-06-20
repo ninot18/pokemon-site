@@ -1,0 +1,55 @@
+---
+const links = [
+    {href: '/', text: 'Listado'},
+    {href: '/pokemons/1', text: 'Paginado'},
+    {href: '/favorites', text: 'Favoritos'},
+]
+
+const currentPath = Astro.url.pathname;
+---
+
+<!-- component -->
+<nav class="shadow bg-slate-800">
+    <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
+        <!-- {
+            links.map( (link) => (
+            
+                <a 
+                    href={link.href} 
+                    class:list={[
+                        "text-gray-200 mx-1.5 sm:mx-6",
+                        {
+                            'border-b-2 border-blue-500': (link.href === currentPath)
+                        }
+                    ]}
+                >
+                    {link.text}
+                </a>
+
+            ))
+        } -->
+        {
+            links.map( (link) => (
+                <div>
+                    <a 
+                        href={link.href} 
+                        class="text-gray-200 mx-1.5 sm:mx-6"
+                    >
+                        {link.text}
+                    </a>
+                    {
+                        currentPath === link.href ? (
+                        <div
+                            transition:name="menu-line"
+                            class="border-b-2 border-blue-500 mx-4"
+                        />
+                        ): (
+                            <div class="border-b-2 border-transparent"/>
+                        )
+                    }
+                </div>
+
+            ))
+        }
+    </div>
+</nav>
