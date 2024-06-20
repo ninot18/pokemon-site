@@ -30,7 +30,17 @@ const { title = siteInfo.title, description = siteInfo.description, image } = As
 
 
 		<title>{title}</title>
+
+
         <ViewTransitions/>
+
+		<!-- No funciona en todos los navegadores todavía
+		<style>
+			@view-transition {
+				navigation: auto; /* enabled */
+			}
+		</style> 
+		-->
 	</head>
 	<body class="bg-slate-800 text-slate-100 m-auto max-w-3xl">
         <main class="mt-10">
