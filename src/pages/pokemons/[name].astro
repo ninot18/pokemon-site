@@ -69,12 +69,13 @@ const imageSrc = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 </MainLayout>
 
 <script>
-import { fade } from "astro:transitions";
+    import type { FavoritePokemon } from 'src/interfaces/favorite-pokemon';
+    import { fade } from "astro:transitions";
 
-    interface FavoritePokemon {
-        name: string;
-        id: number;
-    }
+    // interface FavoritePokemon {
+    //     name: string;
+    //     id: number;
+    // }
 
     const handlePageLoad = () => {
 

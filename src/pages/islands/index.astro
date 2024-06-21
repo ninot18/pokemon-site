@@ -1,0 +1,40 @@
+---
+import { Counter } from "@components/Counter";
+import Title from "@components/shared/Title.astro";
+import MainLayout from "src/layouts/MainLayout.astro";
+
+const counterValue = 20;
+---
+
+<MainLayout title="Islas">
+    <Title>
+        Islas
+    </Title>
+
+    <div
+        style={{
+            height: '2000px',
+            backgroundColor: 'red',
+            opacity: 0.3,
+        }}
+    >
+
+    </div>
+
+    <!-- client:visible (Para cargar el script cuando aparece en el viewport del cliente) -->
+    <!-- client:media="(max-width: 50em)" (Para cargar el script dependiendo del tamaño del viewport del cliente) -->
+    <!-- https://docs.astro.build/en/reference/directives-reference/#client-directives -->
+    <Counter
+        transition:persist="counter"
+        transition:persist-props
+        client:visible 
+        initValue = {counterValue} 
+    >
+
+        <Title>
+            Counter Island
+        </Title>
+
+    </Counter>
+
+</MainLayout>
